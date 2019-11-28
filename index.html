@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Shower Presentation Engine</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules/@shower/ribbon/styles/styles.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+</head>
+<body class="shower list">
+
+<header class="caption">
+    <h1>Container queries</h1>
+    <p>Николай Шабалин, автор из <a href="https://htmlacademy.ru/">HTML Academy</a></p>
+</header>
+
+<section class="slide coverpage">
+    <h2 class="shout">Какой цвет у тени элемента по умолчанию?</h2>
+    <img src="./pictures/open.svg" alt="Открыващий тег" width="64" height="64" class="cover__open">
+    <img src="./pictures/close.svg" alt="Закрывающий тег" width="64" height="64" class="cover__close">
+    <style>
+        .coverpage {
+            background-color: #0094da;
+        }
+
+        .coverpage h2 {
+            color: white;
+            font-size: 50px !important;
+        }
+
+        .cover__open {
+            position: absolute;
+            z-index: 1;
+            top: 25px;
+            left: 90px;
+        }
+
+        .cover__close {
+            position: absolute;
+            z-index: 1;
+            bottom: 20px;
+            right: 90px;
+        }
+    </style>
+</section>
+
+<section class="slide coverpage">
+    <h2 class="shout">К чему по умолчанию привязана система координат абсолютно спозиционированного элемента?</h2>
+    <img src="./pictures/open.svg" alt="Открыващий тег" width="64" height="64" class="cover__open">
+    <img src="./pictures/close.svg" alt="Закрывающий тег" width="64" height="64" class="cover__close">
+
+</section>
+
+
+<section class="slide coverpage">
+    <h2 class="shout">Поговорим о JavaScript. К какому типу данных относится undefined?</h2>
+    <img src="./pictures/open.svg" alt="Открыващий тег" width="64" height="64" class="cover__open">
+    <img src="./pictures/close.svg" alt="Закрывающий тег" width="64" height="64" class="cover__close">
+</section>
+
+<section class="slide" id="cq-intro">
+    <h2 class="shout">Container Queries !== Контейнерные запросы</h2>
+
+    <style>
+        #cq-intro h2 {
+            font-size: 55px;
+        }
+    </style>
+</section>
+
+<section class="slide" id="codepen">
+    <h2 class="shout">
+        <a href="https://codepen.io/expa/pen/ExxBBrM">Пример, когда понадобился бы CQ.</a>
+    </h2>
+</section>
+
+<section class="slide">
+    <h2 class="shout">Немного истории</h2>
+</section>
+
+<section class="slide">
+    <h2>2010. Responisve design</h2>
+    <ul>
+        <li>Изменился подход к созданию интерфейсов;</li>
+        <li>Один стилевой файл для описания всех состояний интерфейса:
+            <ul>
+                <li>Mobile;</li>
+                <li>Tablet;</li>
+                <li>Desktop.</li>
+            </ul>
+        </li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2>2012. Скука</h2>
+    <ul>
+        <li>Одни и те же сетки</li>
+        <li>Одни и те же медиа запросы</li>
+    </ul>
+</section>
+
+<section class="slide layout-example">
+    <h2>Секта такая</h2>
+    <img src="./pictures/layout-1.jpg" alt="Пример сетки" class="cover">
+
+    <style>
+        .layout-example h2 {
+            margin-top: -30px;
+            margin-left: -70px;
+        }
+    </style>
+</section>
+
+<section class="slide layout-example">
+    <h2>Секта сякая</h2>
+    <img src="./pictures/layout-2.jpg" alt="Пример сетки" class="cover">
+</section>
+
+<section class="slide">
+    <h2>2012. Скука</h2>
+    <p>Скука породила движение.</p>
+    <p>Разработчики начали замечать недостатки медиа-запросов.</p>
+</section>
+
+<section class="slide">
+    <h2>2013. Компонентный подход.</h2>
+    <ul>
+        <li>Проект -> компонент</li>
+        <li>Viewpoert -> ???</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2 class="shout">Element Queries</h2>
+</section>
+
+
+<section class="slide">
+    <h2 class="shout">Проблемы</h2>
+</section>
+
+<section class="slide">
+    <img src="./pictures/calendar1.png" alt="Календарь превью" class="cover">
+</section>
+
+<section class="slide">
+    <img src="./pictures/calendar2.png" alt="Календарь превью" class="cover">
+</section>
+
+<section class="slide">
+    <img src="./pictures/calendar3.jpg" alt="Календарь превью" class="cover">
+</section>
+
+<section class="slide">
+    <h2>2013. Осознание</h2>
+    <ul>
+        <li>Всем начали проникаться идее Element queries;</li>
+        <li>Начали появляться полифилы;</li>
+        <li>Полифилы не были похожи на CSS;</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2>2014. Стандартизация</h2>
+    <p>Начала зараждаться спека по <a
+        href="http://ricg.io/#:~:targetText=Responsive%20Issues%20Community%20Group,fast%2C%20accessible%2C%20responsive%20websites">Element
+        Queries</a></p>
+</section>
+
+<section class="slide">
+    <img src="./pictures/nasrat.png" alt="О боже мой, да всем насрать" class="cover">
+</section>
+
+<section class="slide">
+    <h2>2015. Всё начинаем сначала.</h2>
+    <ul>
+        <li>Объявлено, что спека устарела.</li>
+        <li>Группа стандартизации приняла поражение и ...</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <img src="./pictures/update.png" alt="обновление спеки" class="cover">
+</section>
+
+<section class="slide">
+    <h2>2015. Всё начинаем сначала.</h2>
+    <ul>
+        <li>Взаимодействие не с элементов, а с непосредственным родителем;</li>
+        <li>Упрощена реализация для браузеров;</li>
+        <li>Разработчики отказываются от media queries.</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <img src="./pictures/nasrat.png" alt="О боже мой, да всем насрать" class="cover">
+</section>
+
+<section class="slide">
+    <h2>Web developer vs browser maker</h2>
+    <img src="./pictures/war.jpg" alt="Начало войны" class="cover">
+</section>
+
+<section class="slide">
+    <h2>Есть две проблемы</h2>
+    <ol>
+        <li>Бесконечный цикл</li>
+        <li>Разрушение каскада</li>
+    </ol>
+</section>
+
+<section class="slide">
+    <h2 class="shout">Бесконечный цикл</h2>
+</section>
+
+<section class="slide">
+    <img src="./pictures/code1.png" alt="code" class="cover">
+</section>
+
+<section class="slide">
+    <img src="./pictures/code2.png" alt="code" class="cover">
+</section>
+
+<section class="slide">
+    <h2 class="shout">Разрушение каскада</h2>
+</section>
+
+<section class="slide">
+    <img src="./pictures/render-tree.jpg" alt="render tree" class="cover">
+</section>
+
+<section class="slide">
+    <h2 class="shout">Style</h2>
+</section>
+
+<section class="slide">
+    <img src="./pictures/style-1.png" alt="render tree" class="cover">
+</section>
+<section class="slide">
+    <img src="./pictures/style-2.png" alt="render tree" class="cover">
+</section>
+<section class="slide">
+    <img src="./pictures/style-3.png" alt="render tree" class="cover">
+</section>
+<section class="slide">
+    <img src="./pictures/style-4.png" alt="render tree" class="cover">
+</section>
+<section class="slide">
+    <img src="./pictures/style-5.png" alt="render tree" class="cover">
+</section>
+<section class="slide">
+    <img src="./pictures/style-6.png" alt="render tree" class="cover">
+</section>
+<section class="slide">
+    <img src="./pictures/style-7.png" alt="render tree" class="cover">
+</section>
+<section class="slide">
+    <img src="./pictures/style-8.png" alt="render tree" class="cover">
+</section>
+
+
+<section class="slide">
+    <h2 class="shout">Layout</h2>
+</section>
+
+<section class="slide">
+    <img src="./pictures/layout-1.png" alt="render tree" class="cover">
+</section>
+<section class="slide">
+    <img src="./pictures/layout-2.png" alt="render tree" class="cover">
+</section>
+<section class="slide">
+    <img src="./pictures/layout-3.png" alt="render tree" class="cover">
+</section>
+<section class="slide">
+    <img src="./pictures/layout-4.png" alt="render tree" class="cover">
+</section>
+<section class="slide">
+    <img src="./pictures/layout-5.png" alt="render tree" class="cover">
+</section>
+<section class="slide">
+    <img src="./pictures/layout-6.png" alt="render tree" class="cover">
+</section>
+<section class="slide">
+    <img src="./pictures/layout-7.png" alt="render tree" class="cover">
+</section>
+<section class="slide">
+    <img src="./pictures/layout-8.png" alt="render tree" class="cover">
+</section>
+
+
+<section class="slide">
+    <img src="./pictures/render-tree-loop.jpg" alt="render tree" class="cover">
+</section>
+
+<section class="slide">
+    <h2>Разработчики браузеров были правы</h2>
+    <ul>
+        <li>Container query замедляет отрисовку сайта</li>
+        <li>На это ни один здравомыслящий разработчик не подпишется</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2 class="shout">CSS Contaiment</h2>
+</section>
+
+<section class="slide">
+    <h2>Решает проблемы</h2>
+    <ul>
+        <li>Помогает рассказать браузерам какие части макета не зависят от других частей</li>
+        <li>Потенциально решают проблему цикличности</li>
+    </ul>
+</section>
+
+
+<section class="slide">
+    <h2 class="shout">ResizeObserver</h2>
+</section>
+
+<section class="slide">
+    <h2>2016. ResizeObserver</h2>
+    <p>Наблюдает за изменениями элемента.</p>
+</section>
+
+<section class="slide">
+    <img src="./pictures/ResizeObserver.png" alt="render tree" class="cover">
+</section>
+
+
+<section class="slide">
+    <img src="./pictures/cq-code.png" alt="render tree" class="cover">
+</section>
+
+<section class="slide">
+    <img src="./pictures/cq-code-2.png" alt="render tree" class="cover">
+</section>
+
+<section class="slide">
+    <img src="./pictures/cq-code-3.png" alt="render tree" class="cover">
+</section>
+
+<section class="slide">
+    <h2>ResizeObserver полифилы</h2>
+    <p><a href="https://gist.github.com/davatron5000/bbede54cf189bf53e4de">Список полифилов</a></p>
+</section>
+
+<section class="slide">
+    <h2>Итого:</h2>
+    <ul>
+        <li>Разработчики до сих не получили Container Queries в том виде в каком хотели</li>
+        <li>Но научились делать его реализацию с помощью ResizeObserver</li>
+        <li>Совсем недавно произошёл перезапуск Container Queries, но уже на уровне <a href="https://wicg.github.io/cq-usecases/">W3C</a></li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2>Полезные ссылки</h2>
+
+    <ul class="columns two">
+        <li><a
+            href="https://developers.google.com/web/fundamentals/performance/rendering/avoid-large-complex-layouts-and-layout-thrashing?hl=ru">Конвеер
+            ренеринга 1</a></li>
+        <li><a
+            href="https://developers.google.com/web/fundamentals/performance/rendering/simplify-paint-complexity-and-reduce-paint-areas?hl=ru">Конвеер
+            ренеринга 2</a></li>
+
+        <li><a href="https://www.w3.org/TR/css-contain-1/">CSS Contain 1</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Containment">CSS Contain 2</a></li>
+        <li><a href="https://css-live.ru/articles/css-izolyaciya.html">CSS Contain 3</a></li>
+        <li><a href="https://habr.com/ru/post/309042/">CSS Contain 4</a></li>
+        <li><a href="https://drafts.csswg.org/resize-observer-1/">ResizeObserver 1</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver">ResizeObserver 2</a></li>
+    </ul>
+</section>
+
+<footer class="badge">
+    <a href="https://github.com/shower/shower">Fork me on GitHub</a>
+</footer>
+
+<div class="progress"></div>
+
+<script src="node_modules/shower-core/shower.min.js"></script>
+<!-- Copyright © 3000 Yours Truly, Famous Inc. -->
+
+</body>
+</html>
